@@ -10,7 +10,7 @@ const eqArrays = function(actual, expected) {
     // if element w/in array does not match corresponding element in other string, or array lengths different, return false
     if (actual[i] !== expected[i] || actual.length !== expected.length) return false;
   }
-  // esle return true
+  // else return true
   return true;
 };
 
