@@ -3,7 +3,7 @@ const eqArrays = function(actual, expected) {
     // if element w/in array does not match corresponding element in other string, or array lengths different, return false
     if (actual[i] !== expected[i] || actual.length !== expected.length) return false;
   }
-  // esle return true
+  // else return true
   return true;
 };
 
@@ -19,19 +19,13 @@ const assertEqualArrays = function(actual, expected) {
   console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
 };
 
-const middle = function(array) {
-  let midIndex = Math.floor(array.length / 2);
-  let midArray = [];
-  if (array.length < 3) {
-    return []
-  } else if (array.length % 2 !== 0) {
-    midArray.push(array[midIndex]);
-  } else {
-    midArray.push(array[(midIndex - 1)],array[midIndex]);
+const withoutArray = function(source, itemsToRemove) {
+  let outputArray = [...source];
+  for (let i = 0; i < itemsToRemove.length; i ++) {
+    outputArray.splice(outputArray.indexOf(itemsToRemove[i]), 1);
   }
-  return midArray;
+  return outputArray;
 };
 
-assertEqualArrays(middle([1, 2]),[])
-assertEqualArrays(middle([1, 2, 3]),[2]);
-assertEqualArrays(middle([1, 2, 3, 4]),[2, 3]);
+assertEqualArrays((withoutArray([1, 2, 3, 4], [1, 4])), [2, 3,]);
+assertEqualArrays((withoutArray(["1", "2", "3"], [1, 2, "3"])), [1,2]);
