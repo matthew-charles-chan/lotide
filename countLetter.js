@@ -24,6 +24,10 @@ const countCharacters = function(str) {
   return resultObject;
 };
 
-const test = 'lighthouse in the house';
 
-console.log(countCharacters(test));
+const testCountChar = countCharacters('lighthouse in the house');
+
+assertEqual(testCountChar.h, 4)
+assertEqual(testCountChar.l, 1)
+assertEqual(testCountChar.t, 2)
+assertEqual(testCountChar.e, 3)
