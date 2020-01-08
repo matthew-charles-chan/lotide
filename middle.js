@@ -21,13 +21,13 @@ const assertEqualArrays = function(actual, expected) {
 
 const middle = function(array) {
   let midIndex = Math.floor(array.length / 2);
-  let midValue = [];
+  let midArray = [];
   if (array.length % 2 !== 0) {
-    midValue.push(array[midIndex]);
+    midArray.push(array[midIndex]);
   } else {
-    midValue.push(array[(midIndex - 1)],array[midIndex]);
+    midArray.push(array[(midIndex - 1)],array[midIndex]);
   }
-  return midValue;
+  return midArray;
 };
 
 
