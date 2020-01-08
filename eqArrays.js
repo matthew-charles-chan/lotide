@@ -5,10 +5,10 @@ const assertEqual = function(actual, expected) {
   );
 };
 
-const eqArrays = function(ar1, ar2) {
-  for (let i = 0; i < ar1.length; i++) {
+const eqArrays = function(actual, expected) {
+  for (let i = 0; i < actual.length; i++) {
     // if element w/in array does not match corresponding element in other string, or array lengths different, return false
-    if (ar1[i] !== ar2[i] || ar1.length !== ar2.length) return false;
+    if (actual[i] !== expected[i] || actual.length !== expected.length) return false;
   }
   // esle return true
   return true;
