@@ -19,7 +19,7 @@ const assertEqualArrays = function(actual, expected) {
   console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
 };
 
-const withoutArray = function(source, itemsToRemove) {
+const without = function(source, itemsToRemove) {
   let outputArray = [...source];
   for (let i = 0; i < itemsToRemove.length; i ++) {
     outputArray.splice(outputArray.indexOf(itemsToRemove[i]), 1);
@@ -27,5 +27,5 @@ const withoutArray = function(source, itemsToRemove) {
   return outputArray;
 };
 
-assertEqualArrays((withoutArray([1, 2, 3, 4], [1, 4])), [2, 3,]);
-assertEqualArrays((withoutArray(["1", "2", "3"], [1, 2, "3"])), [1,2]);
+assertEqualArrays((without([1, 2, 3, 4], [1, 4])), [2, 3,]);
+assertEqualArrays((without(["1", "2", "3"], [1, 2, "3"])), [1,2]);
