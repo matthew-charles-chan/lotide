@@ -25,9 +25,10 @@ const countOnly = function(allItems, itemsToCount) {
 };
 */
  
-// more concise way 
+// more concise way
 
 const countOnly = function(allItems, itemsToCount) {
+  // create result object
   const results = {};
   for (const item of allItems) {
     if (itemsToCount[item]) {
