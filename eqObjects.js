@@ -5,36 +5,37 @@ const assertEqual = function(actual, expected) {
   );
 };
 
-
-const eqArrays = function(actual, expected) {
-  for (let i = 0; i < actual.length; i++) {
-    // if element w/in array does not match corresponding element in other string, or array lengths different, return false
-    if (actual[i] !== expected[i] || actual.length !== expected.length) return false;
-  }
-  // else return true
-  return true;
-};
-
-
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 const eqObjects = function(objectA, objectB) {
+  // set aKeys and bKeys to ObjectA and ObjectB keys
   const aKeys = Object.keys(objectA);
   const bKeys = Object.keys(objectB);
+  
+  //if number of keys is different ==> FALSE
   if (aKeys.length !== bKeys.length) {
     return false;
   }
+
+  //loop through each key in objectA keys
   for (let key of aKeys) {
+   
+    // tests if key value is an array
     if (Array.isArray(objectA[key])) {
-      for (let i = 0; i < objectA[key].length; i ++) {
-        if (objectA[key][i] !== objectB[key][i] || objectA[key].length !== objectB[key].length) {
+      // if an array, loop through the array
+      for (let aKeyArray of objectA[key]) {
+        // if array values are different or length of array is different ==> FALSE
+        if (objectA[aKeyArray] !== objectB[aKeyArray] || objectA[key].length !== objectB[key].length) {
           return false;
         }
       }
+    // if not an array, compare key values, if different ===> FALSE 
     } else if (objectA[key] !== objectB[key]) {
       return false;
     }
   }
+
+  // else, ==> TRUE
   return true;
 };
 
