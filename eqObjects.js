@@ -29,7 +29,7 @@ const eqObjects = function(objectA, objectB) {
           return false;
         }
       }
-    // if not an array, compare key values, if different ===> FALSE 
+    // if not an array, compare key values, if different ===> FALSE
     } else if (objectA[key] !== objectB[key]) {
       return false;
     }
@@ -50,6 +50,11 @@ assertEqual(eqObjects(ab, abc), false);
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 assertEqual(eqObjects(cd, dc), true);
+
+const ed = { e: "1", d: ["2", 3], f: 7 };
+const de = { d: ["2", 3], e: "1" };
+assertEqual(eqObjects(cd, dc), false);
+
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2), false);
