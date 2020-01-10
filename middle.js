@@ -23,7 +23,7 @@ const middle = function(array) {
   let midIndex = Math.floor(array.length / 2);
   let midArray = [];
   if (array.length < 3) {
-    return []
+    return [];
   } else if (array.length % 2 !== 0) {
     midArray.push(array[midIndex]);
   } else {
@@ -32,6 +32,6 @@ const middle = function(array) {
   return midArray;
 };
 
-assertEqualArrays(middle([1, 2]),[])
+assertEqualArrays(middle([1, 2]),[]);
 assertEqualArrays(middle([1, 2, 3]),[2]);
 assertEqualArrays(middle([1, 2, 3, 4]),[2, 3]);
