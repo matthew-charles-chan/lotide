@@ -10,22 +10,28 @@ const assertEqualObject = function(actual, expected) {
     return;
   }
   for (let key of actualKeys) {
-    if (Array.isArray(actual[key])) {
-      for (let actualKeyArray of actual[key]) {
-        if (actual[actualKeyArray] !== expected[actualKeyArray] || actual[key].length !== expected[key].length) {
-          console.log(errorMsg);
+    if (!expected[key]) {
+      console.log(errorMsg);
+      return;
+    } else if (Array.isArray(actual[key])) {
+      for (let i = 0; i < actual[key].length; i ++) {
+        if (actual[key].length !== expected[key].length) {
+          console.log(errorMsg)
+          return;
+        } else if (actual[key][i] !== expected[key][i]) {
+          console.log(errorMsg)
           return;
         }
       }
     } else if (actual[key] !== expected[key]) {
-      console.log(errorMsg);
+      console.log(errorMsg)
       return;
     }
   }
-  console.log(passMsg);
+  console.log(passMsg)
   return;
-};
-
+};  
+  
 const ab = { a: '1', b: '2'};
 const ba = { b: '2', a: '1'};
 assertEqualObject(ab, ba);
@@ -34,7 +40,7 @@ assertEqualObject(ab, ba);
 const abc = {a: "1", b: "2", c: "3"};
 assertEqualObject(ab, abc);
 
-const cd = { c: "1", d: ["2", 3] };
+const cd = { c: "1", d: ["2", 4] };
 const dc = { d: ["2", 3], c: "1" };
 assertEqualObject(cd, dc);
 
