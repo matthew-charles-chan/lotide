@@ -12,22 +12,23 @@ const eqObjects = function(objectA, objectB) {
   if (aKeys.length !== bKeys.length) {
     return false;
   }
-  // loop through object a
+  // loop through objectA
   for (let key of aKeys) {
-    // if key is Array, loop through that array
-    if (Array.isArray(objectA[key])) {
+    // if object keys are different (objectA key does not exist in objectB), return false
+    if (!objectB[key]) {
+      return false;
+    // if object key is array, loop through array
+    } else if (Array.isArray(objectA[key])) {
       for (let i = 0; i < objectA[key].length; i ++) {
-        // if object keys are different (objectA key does not exist in objectB), return false
-        if (!objectB[key]) {
-          return false;
-        }
-        // if array lengths are different, return false 
+        // if array lengths are different, return false
         if (objectA[key].length !== objectB[key].length) {
           return false;
+        // if array items are different, return fale
         } else if (objectA[key][i] !== objectB[key][i]) {
           return false;
         }
       }
+    
     } else if (objectA[key] !== objectB[key]) {
       return false;
     }
