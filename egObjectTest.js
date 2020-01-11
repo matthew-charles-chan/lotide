@@ -28,11 +28,12 @@ const eqObjects = function(objectA, objectB) {
           return false;
         }
       }
-    
+    // if key is not an array, check for equality of value. if values not same, return false.
     } else if (objectA[key] !== objectB[key]) {
       return false;
     }
   }
+  // if all keys and values equal, return true
   return true;
 };
     
