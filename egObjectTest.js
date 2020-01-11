@@ -15,6 +15,7 @@ const eqObjects = function(objectA, objectB) {
   for (let key of aKeys) {
     if(Array.isArray(objectA[key])) {
       for ( let i = 0; i < objectA[key].length; i ++) {
+      
         if (!objectB[key]) {
           return false
         }
