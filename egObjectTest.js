@@ -8,36 +8,32 @@ const assertEqual = function(actual, expected) {
 const eqObjects = function(objectA, objectB) {
   const aKeys = Object.keys(objectA);
   const bKeys = Object.keys(objectB);
+  // if objects are different lengths, return false
   if (aKeys.length !== bKeys.length) {
     return false;
   }
-
+  // loop through object a
   for (let key of aKeys) {
-    if(Array.isArray(objectA[key])) {
-      for ( let i = 0; i < objectA[key].length; i ++) {
-      
+    // if key is Array, loop through that array
+    if (Array.isArray(objectA[key])) {
+      for (let i = 0; i < objectA[key].length; i ++) {
+        // if object keys are different (objectA key does not exist in objectB), return false
         if (!objectB[key]) {
-          return false
+          return false;
         }
-          if (objectA[key].length !== objectB[key].length) {
-            return false 
-          } else if (objectA[key][i] !== objectB[key][i]) {
-            return false
-          }
-        }    
-  } else if (objectA[key] !== objectB[key]) {
+        // if array lengths are different, return false 
+        if (objectA[key].length !== objectB[key].length) {
+          return false;
+        } else if (objectA[key][i] !== objectB[key][i]) {
+          return false;
+        }
+      }
+    } else if (objectA[key] !== objectB[key]) {
       return false;
     }
   }
   return true;
 };
-   
-  //   if (Array.isArray(objectA[key])) {
-  //     for (let aKeyArray of objectA[key]) {
-  //       if (objectA[aKeyArray] !== objectB[aKeyArray] || objectA[key].length !== objectB[key].length) {
-  //         return false;
-  //       }
-
     
 
 const ab = { a: '1', b: [2, 4]};
