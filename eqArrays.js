@@ -1,9 +1,9 @@
-const eqArrays = function(actual, expected) {
-  for (let i = 0; i < actual.length; i++) {
-    // if element w/in array does not match corresponding element in other string, or array lengths different, return false
-    if (actual.length !== expected.length) {
-      return false 
-    } else if (actual[i] !== expected[i]) {
+const eqArrays = function(ar1, ar2) {
+  if (ar1.length !== ar2.length) {
+    return false;
+  }
+  for (let i = 0; i < ar1.length; i++) {
+    if (ar1[i] !== ar2[i]) {
       return false;
     } 
   }
