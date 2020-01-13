@@ -38,22 +38,24 @@ const eqObjects = function(objectA, objectB) {
 };
     
 
-const ab = { a: '1', b: [2, 4]};
-const ba = { b: [2, 4], a: '1'};
-assertEqual(eqObjects(ab, ba), true);
+// const ab = { a: '1', b: [2, 4]};
+// const ba = { b: [2, 4], a: '1'};
+// assertEqual(eqObjects(ab, ba), true);
 
 
-const abc = {a: "1", b: "2", c: "3"};
-assertEqual(eqObjects(ab, abc), false);
+// const abc = {a: "1", b: "2", c: "3"};
+// assertEqual(eqObjects(ab, abc), false);
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true);
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertEqual(eqObjects(cd, dc), true);
 
-const ed = { e: "1", d: ["2", 3], f: 7 };
-const de = { d: ["2", 3], e: "1" };
-assertEqual(eqObjects(ed, de), false);
+// const ed = { e: "1", d: ["2", 3], f: 7 };
+// const de = { d: ["2", 3], e: "1" };
+// assertEqual(eqObjects(ed, de), false);
 
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false);
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// assertEqual(eqObjects(cd, cd2), false);
+
+module.exports = eqObjects;

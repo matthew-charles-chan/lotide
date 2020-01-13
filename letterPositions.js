@@ -13,7 +13,7 @@ const assertEqualArrays = function(actual, expected) {
 
 
 
-const letterPosition = function(str) {
+const letterPositions = function(str) {
   // create resultObject
   let resultObject = {};
   for (let i = 0; i < str.length; i ++) {
@@ -28,10 +28,12 @@ const letterPosition = function(str) {
   return resultObject;
 };
 
-const testLetterPos = letterPosition("hello");
+module.exports = letterPositions;
 
-assertEqualArrays(testLetterPos.h, [0]);
-assertEqualArrays(testLetterPos.e, [1]);
-assertEqualArrays(testLetterPos.l, [2,3]);
-assertEqualArrays(testLetterPos.o, [4]);
+// const testLetterPos = letterPositions("hello");
+
+// assertEqualArrays(testLetterPos.h, [0]);
+// assertEqualArrays(testLetterPos.e, [1]);
+// assertEqualArrays(testLetterPos.l, [2,3]);
+// assertEqualArrays(testLetterPos.o, [4]);
 

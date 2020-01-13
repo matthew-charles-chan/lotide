@@ -23,6 +23,7 @@ const flatten = function(array) {
   return flattenedArray;
 };
 
+module.exports = flatten;
 
-assertEqualArrays(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
-assertEqualArrays(flatten([['Matthew', 'chan'], [1, 4], 5, ['hello']]), ['Matthew', 'chan', 1, 4, 5, 'hello']);
+// assertEqualArrays(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+// assertEqualArrays(flatten([['Matthew', 'chan'], [1, 4], 5, ['hello']]), ['Matthew', 'chan', 1, 4, 5, 'hello']);

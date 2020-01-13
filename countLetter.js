@@ -1,12 +1,12 @@
-const assertEqual = function(actual, expected) {
-  console.log(actual === expected ?
-    `✅ Assertion Passed: ${actual} === ${expected}` :
-    `❌ Assertion Failed: ${actual} !== ${expected}`
-  );
-};
+// const assertEqual = function(actual, expected) {
+//   console.log(actual === expected ?
+//     `✅ Assertion Passed: ${actual} === ${expected}` :
+//     `❌ Assertion Failed: ${actual} !== ${expected}`
+//   );
+// };
 
 
-const countCharacters = function(str) {
+const countLetter = function(str) {
   // splits string at spaces, and rejoins without spaces
   const noSpacesString = str.split(' ').join('');
   // create resultObject
@@ -25,9 +25,11 @@ const countCharacters = function(str) {
 };
 
 
-const testCountChar = countCharacters('lighthouse in the house');
+// const testCountChar = countLetter('lighthouse in the house');
 
-assertEqual(testCountChar.h, 4);
-assertEqual(testCountChar.l, 1);
-assertEqual(testCountChar.t, 2);
-assertEqual(testCountChar.e, 3);
+// assertEqual(testCountChar.h, 4);
+// assertEqual(testCountChar.l, 1);
+// assertEqual(testCountChar.t, 2);
+// assertEqual(testCountChar.e, 3);
+
+module.exports = countLetter;
