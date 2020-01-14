@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@matthew-charles-chan/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "mini-clone version of lodash, created for educational purpose",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/matthew-charles-chan/lotide.git"
   },
-  "author": "",
+  "author": "matthew.charles.chan@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/matthew-charles-chan/lotide/issues"
